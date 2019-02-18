@@ -1,7 +1,7 @@
 # Tickefy
 A little app built with Node.js, Vue.js and mongoDB that simulates buying a ticket online
 
-###Mockup:
+### Mockup:
 https://goo.gl/BSskwz
 
 ### To-do list:
