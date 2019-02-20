@@ -24,17 +24,17 @@ https://goo.gl/BSskwz
 
 ## Vue.js (with Vuex and Vue CLI)
 
-- [ ] Create a Welcome page
-    - [ ] This page will contain a log in and sign up buttons
+- [X] Create a Welcome page
+    - [X] This page will contain a log in and sign up buttons
     - [ ] Log in and sign up can be only done using Facebook or Google
     - [ ] You cannot proceed without an account
-- [ ] Create an Events page
-    - [ ] Create a search bar (just html and css)
-    - [ ] Fill the page with the Events that the API sends (using the data, dynamically fill the Artists name, Events place, Date, etc.).
-    - [ ] When an event is clicked it will take you to another page 
-- [ ] Create a Buy page
-    - [ ] In that page the user can select the amount of tickets
-    - [ ] The price should go up and down dynamically depending on the amount of tickets chosen.
+- [X] Create an Events page
+    - [X] Create a search bar (just html and css)
+    - [X] Fill the page with the Events that the API sends (using the data, dynamically fill the Artists name, Events place, Date, etc.).
+    - [X] When an event is clicked it will take you to another page 
+- [X] Create a Buy page
+    - [X] In that page the user can select the amount of tickets
+    - [X] The price should go up and down dynamically depending on the amount of tickets chosen.
     - [ ] Buy button at the end of page that will redirect you to the Tickets page
 - [ ] Create a Tickets page
     - [ ] Show all tickets purchased in this page, indivually as cards
@@ -43,10 +43,10 @@ https://goo.gl/BSskwz
 - [ ] Create a Staff page
     - [ ] Can only be access with the right user and password
     - [ ] Will only show the account info with a unique ID 
-- [ ] Create an Admin page
-    - [ ] In this page the Admin can see all the events that exist in the database and see the info related to it
-    - [ ] The admin can also create new events in this page (with amount of sits, artist name, price, location, etc.).
-    - [ ] The events created by the admin needs to posted in the database.
+- [X] Create an Admin page
+    - [X] In this page the Admin can see all the events that exist in the database and see the info related to it
+    - [X] The admin can also create new events in this page (with amount of sits, artist name, price, location, etc.).
+    - [X] The events created by the admin needs to posted in the database.
 
 
 
