@@ -1,4 +1,4 @@
-let Ticket = require('../models/ticket');
+let Ticket = require('../models/booking');
 
 module.exports.get = async (req, res) => {
 
