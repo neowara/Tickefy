@@ -24,10 +24,13 @@ export default {
 </script>
 <style lang="scss">
 @import '../scss/variables';
+@import '../scss/main.scss';
 #home {
   background: $darkblue;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  width: 100vw;
   .content {
     flex: 10;
     @extend %center;

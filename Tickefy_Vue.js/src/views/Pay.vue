@@ -2,8 +2,8 @@
     <main id="pay">
         <section class="content" v-if="event">
         <p>You are about to score some sweet tickets to</p>
-        <h1>{{ event.name }}</h1>
-        <p class="when">{{ event.when.date }} {{ event.when.from }} - {{ event.when.to }}</p>
+        <h1>{{ event.artist }}</h1>
+        <p class="when">{{ event.when.date }} {{ event.when.startTime }} - {{ event.when.endTime }}</p>
         <p class="where">@ Globen</p>
         <section class="counter">
           <article class="price">{{ event.price * amount }} sek</article>
@@ -46,7 +46,7 @@ export default {
   methods: {
     buy(){
       this.$store.dispatch('buy', { event: this.event._id, amount: this.amount });
-      this.$router.push('/tickets');
+      this.$router.push('/bookings');
     
     }
   }
