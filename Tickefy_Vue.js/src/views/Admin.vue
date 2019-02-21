@@ -125,7 +125,7 @@ $baseline: 2.6rem;
         grid-template-columns: 2fr 1fr;
         grid-gap: 1rem;
         .events {
-            background: rgba($color: white, $alpha: .4);
+            background: rgba($color: black, $alpha: .4);
             border-radius: 3px;
             padding: 1rem;
             table {
