@@ -8,15 +8,15 @@ export default new Vuex.Store({
   state: {
     event: {},
     events: [],
-    tickets: [],
+    bookings: [],
     verifyData: null
   },
   mutations: {
     selectEvent(state, event){
         state.event = event;
     },
-    setTickets(state, tickets){
-        state.tickets = tickets;
+    setBookings(state, bookings){
+        state.bookings = bookings;
     },
     setEvents(state, events){
         state.events = events;
@@ -34,14 +34,14 @@ export default new Vuex.Store({
     },
     async buy(ctx, buyData){
         
-        let tickets = await axios.post('http://localhost:3000/tickets', buyData);
-        ctx.commit('setTickets', tickets.data);
-        localStorage.setItem('tickets', JSON.stringify(tickets.data));
+        let bookings = await axios.post('http://localhost:3000/bookings', buyData);
+        ctx.commit('setBookings', bookings.data);
+        localStorage.setItem('bookings', JSON.stringify(bookings.data));
 
     },
-    getTickets(ctx){
-        let tickets = localStorage.getItem('tickets');
-        ctx.commit('setTickets', JSON.parse(tickets));
+    getBookings(ctx){
+        let bookings = localStorage.getItem('bookings');
+        ctx.commit('setBookings', JSON.parse(bookings));
     },
     async verifyTicket(ctx, code){
       let verification = await axios.get(`http://localhost:3000/verify/${code}`);

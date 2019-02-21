@@ -21,9 +21,9 @@ export default new Router({
       component: () => import('./views/Pay.vue')
     },
     {
-      path: '/tickets',
-      name: 'tickets',
-      component: () => import('./views/Tickets.vue')
+      path: '/bookings',
+      name: 'bookings',
+      component: () => import('./views/Bookings.vue')
     },
     {
       path: '/verify',

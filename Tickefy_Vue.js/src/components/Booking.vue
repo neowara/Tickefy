@@ -1,50 +1,50 @@
 <template>
-    <article class="ticket">
+    <article class="booking">
         <section class="what">
             <p class="type">what</p>
-            <h1>{{ ticket.event.name }}</h1>
+            <h1>{{ booking.event.artist }}</h1>
         </section>
         <section class="where">
             <p class="type">Where</p>
-            <h2>{{ ticket.event.where.venue }}</h2>
-            <p>{{ ticket.event.where.adress }}</p>
+            <h2>{{ booking.event.where.venue }}</h2>
+            <p>{{ booking.event.where.adress }}</p>
         </section>
         <section class="when">
             <p class="type">When</p>
-            <h2>{{ ticket.event.when.date }}</h2>
+            <h2>{{ booking.event.when.date }}</h2>
         </section>
         <section class="from">
             <p class="type">From</p>
-            <h2>{{ ticket.event.when.from }}</h2>
+            <h2>{{ booking.event.when.startTime }}</h2>
         </section>
         <section class="to">
             <p class="type">To</p>
-            <h2>{{ ticket.event.when.to }}</h2>
+            <h2>{{ booking.event.when.endTime }}</h2>
         </section>
         <section class="info">
             <p class="type">Info</p>
-            <p>{{ ticket.event.info }}</p>
+            <p>{{ booking.event.info }}</p>
         </section>
         <section class="code">
             <h1 class="barcode">
-                {{ ticket.code }}
+                {{ booking.code }}
             </h1>
-            <p class="utfcode">#{{ ticket.code }}</p>
+            <p class="utfcode">#{{ booking.code }}</p>
         </section>
     </article>
 </template>
 
 <script>
 export default {
-    name: 'ticket',
-    props: ['ticket']
+    name: 'booking',
+    props: ['booking']
 }
 </script>
 
 <style lang="scss">
 @import '../scss/variables';
 $baseline: 18px;
-.ticket {
+.booking {
     position: absolute;
     max-width: 19rem;
     background: white;
