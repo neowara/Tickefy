@@ -44,6 +44,8 @@ export default {
   background: $orange !important;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+    width: 100%;
   header {
       flex: 3;
       @extend %center;
