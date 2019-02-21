@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+
 //connect to our db
 mongoose.connect(`mongodb+srv://captain:${process.env.PASSWORD}@cluster0-5hp9v.mongodb.net/Tickefy?retryWrites=true`, { useNewUrlParser: true})
 .then(() => {

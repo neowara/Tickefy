@@ -70,4 +70,9 @@ export default {
     flex: 7;
   }
 }
+
+#events {
+  @extend %mobileFirst;
+}
+
 </style>

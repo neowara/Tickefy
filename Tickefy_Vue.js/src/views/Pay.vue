@@ -55,6 +55,7 @@ export default {
 <style lang="scss">
 @import '../scss/variables';
 #pay {
+  @extend %mobileFirst;
   background: $darkblue;
   display: flex;
   flex-direction: column;

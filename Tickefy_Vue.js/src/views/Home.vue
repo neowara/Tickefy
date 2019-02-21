@@ -41,5 +41,8 @@ export default {
       margin: .5rem 0;
     }
   }
+
+    @extend %mobileFirst;
 }
+
 </style>

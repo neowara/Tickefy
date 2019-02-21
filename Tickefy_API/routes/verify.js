@@ -1,22 +1,31 @@
 let Ticket = require('../models/booking');
 
+
+// GET
 module.exports.get = async (req, res) => {
 
     try {
 
-    let resp = await Ticket.find({ code: req.params.code});
+        let ticket = await Ticket.find({ code: req.params.code});
 
-    if(resp.length == 1){
-        //Valid ticket 
-        res.status(200).send('Ticket is valid.');
+        if(ticket.length == 1 && ticket[0].used == false){
+            
+            res.status(200).send({ msg: `Ticket is valid for event: ${ticket[0].event.artist}.`, verified: true });
+    
+            // uppdaterar biljett till used
+            await Ticket.findOneAndUpdate({ code: req.params.code },{
+                used: true
+            },{ new: true, useFindAndModify: false });
 
-    } else {
-        //Not valid
-        res.status(400).send('Ticket is NOT valid, get a real one. You poser');
-    }
+        } else {
+        
+            res.status(200).send({ msg: 'Ticket is NOT valid.', verified: false })
+        
+        }
 
-
-    } catch (err) {
+    } catch(err) {
+        console.error(err)
         res.status(500).send(err);
     }
-} 
+
+}

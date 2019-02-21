@@ -41,6 +41,7 @@ export default {
 <style lang="scss">
 @import '../scss/variables';
 #verify {
+  @extend %mobileFirst;
   background: $orange !important;
   display: flex;
   flex-direction: column;

@@ -41,6 +41,8 @@ export default {
         color: white;
         font-weight: 700;
         @extend %center;
+        text-align: center;
+
     }
     .info {
         flex: 2;
