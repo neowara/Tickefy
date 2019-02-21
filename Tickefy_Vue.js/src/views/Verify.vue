@@ -1,9 +1,11 @@
 <template>
   <main id="verify">
       <header>
-          <h1>Verify code</h1>
+          <h1> Welcome Staff</h1>
       </header>
+      
     <section class="content">
+         <img id="pic" src="../assets/large.png" alt="Staff picture">
         <section class="verification" v-if="verification">
             <h1 v-if="verification.verified">Valid</h1>
             <h1 v-if="!verification.verified">NOT valid</h1>
@@ -14,6 +16,7 @@
             <a href="#" class="verify" @click="verifyTicket">Verify code</a>
         </section>
   </section>
+  
   </main>
 </template>
 
@@ -99,5 +102,10 @@ export default {
         }
     }
   }
+}
+
+#pic{
+    margin-bottom: 5rem;
+    border-radius: 50%;
 }
 </style>

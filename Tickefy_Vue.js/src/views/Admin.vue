@@ -120,19 +120,19 @@ $baseline: 2.6rem;
     .container {
         max-width: 1000px;
         width: 100%;
-        color: white;
+        color: black;
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-gap: 1rem;
         .events {
-            background: rgba($color: #000, $alpha: .4);
+            background: rgba($color: white, $alpha: .4);
             border-radius: 3px;
             padding: 1rem;
             table {
                 width: 100%;
                 
                 thead {
-                    color: $pink;
+                    color: pink;
                     font-size: .8rem;
                     text-transform: uppercase;
                     td {
