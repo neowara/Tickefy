@@ -107,6 +107,8 @@ export default {
 <style lang="scss">
 @import '../scss/variables';
 $baseline: 2.6rem;
+
+
 #admin {
     @extend %center;
     .logo {
