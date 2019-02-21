@@ -1,8 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 //connect to our db
-mongoose.connect(`mongodb+srv://captain:${process.env.PASSWORD}@cluster0-5hp9v.mongodb.net/test?retryWrites=true`, { useNewUrlParser: true})
+mongoose.connect(`mongodb+srv://captain:${process.env.PASSWORD}@cluster0-5hp9v.mongodb.net/Tickefy?retryWrites=true`, { useNewUrlParser: true})
 .then(() => {
     console.info('Connected to database');
 })
@@ -11,18 +12,24 @@ mongoose.connect(`mongodb+srv://captain:${process.env.PASSWORD}@cluster0-5hp9v.m
 })
 
 //routes
-let tickets = require('./routes/tickets.js');
+let bookings = require('./routes/bookings.js');
 let verify = require('./routes/verify.js');
+let events = require('./routes/events.js');
 
 let app = express();
 app.use(express.json());
+app.use(cors());
 
-app.route('/tickets')
-.post(tickets.post)
-.get(tickets.get)
+app.route('/bookings')
+.post(bookings.post)
+.get(bookings.get)
 
 app.route('/verify/:code')
 .get(verify.get)
+
+app.route('/events')
+.post(events.post)
+.get(events.get)
 
 
 app.listen(3000, () => {
