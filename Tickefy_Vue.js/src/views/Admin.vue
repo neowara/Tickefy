@@ -56,8 +56,8 @@ export default {
                 },
                 when: {
                     date: '',
-                    from: '',
-                    to: ''
+                    startTime: '',
+                    endTime: ''
                 },
                 info: '',
                 price: '',
@@ -106,6 +106,7 @@ export default {
 
 <style lang="scss">
 @import '../scss/variables';
+@import '../scss/main.scss';
 $baseline: 2.6rem;
 #admin {
     @extend %center;

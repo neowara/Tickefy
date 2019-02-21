@@ -21,6 +21,7 @@ module.exports.post = async (req, res) => {
             }
 
             bookings.push(booking);
+            
             let updateEvents = await Event.findOneAndUpdate(
                 { artist: event.artist},
                 { $inc: { tickets: -1 } },
