@@ -4,6 +4,23 @@ A little app built with Node.js, Vue.js and mongoDB that simulates buying a tick
 ### Mockup:
 https://goo.gl/BSskwz
 
+### Installation: 
+
+Download the project and navigate to it with your terminal (on Mac) or cmd (on Windows)(Sorry Linux users). Navigate to Tickefy_API folder and use 'npm install' to install all modules.
+User the following to connecto the database: (on Mac: 'PASSWORD=thetitanic nodemon index.js') (on Windows: 'SET PASSWORD=thetitanic' press ENTER then write 'nodemon index.js').
+Once the API is running then use another terminal to navigate to Tickefy_Vue.js folder then use 'npm install' to install all needed modules. After that is done use 'npm run serve' to start the Vue app.
+
+### Logins: 
+##Login as admin:
+
+username: admin
+password: abc123
+
+##Login as staff: 
+username: ericandre
+password: 123abc
+
+
 ### To-do list:
 
 ## MongoDB
@@ -35,13 +52,13 @@ https://goo.gl/BSskwz
 - [X] Create a Buy page
     - [X] In that page the user can select the amount of tickets
     - [X] The price should go up and down dynamically depending on the amount of tickets chosen.
-    - [ ] Buy button at the end of page that will redirect you to the Tickets page
-- [ ] Create a Tickets page
-    - [ ] Show all tickets purchased in this page, indivually as cards
-    - [ ] Every card should contain the information shown in the sketch
-    - [ ] Every card will have a unique code at the bottom and optionally a QR code
-- [ ] Create a Staff page
-    - [ ] Can only be access with the right user and password
+    - [X] Buy button at the end of page that will redirect you to the Tickets page
+- [ X Create a Tickets page
+    - [X] Show all tickets purchased in this page, indivually as cards
+    - [X] Every card should contain the information shown in the sketch
+    - [X] Every card will have a unique code at the bottom and optionally a QR code
+- [X] Create a Staff page
+    - [X] Can only be access with the right user and password
     - [ ] Will only show the account info with a unique ID 
 - [X] Create an Admin page
     - [X] In this page the Admin can see all the events that exist in the database and see the info related to it
