@@ -15,7 +15,7 @@
             <img src="../assets/increse.svg" alt="increse">
           </button>
         </section>
-        <a href="#" class="btn" @click="buy">Take my money!</a>
+        <a href="#" class="btn" :disabled="amount==0" @click="buy">Take my money!</a>
         </section>
         <section class="content" v-if="!event">
           <p>No ticket selected.</p>
@@ -45,9 +45,10 @@ export default {
   },
   methods: {
     buy(){
+      if (this.amount > 0) {
       this.$store.dispatch('buy', { event: this.event._id, amount: this.amount });
       this.$router.push('/bookings');
-    
+      }
     }
   }
 }
