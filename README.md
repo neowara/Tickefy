@@ -11,14 +11,20 @@ User the following to connecto the database: (on Mac: 'PASSWORD=thetitanic nodem
 Once the API is running then use another terminal to navigate to Tickefy_Vue.js folder then use 'npm install' to install all needed modules. After that is done use 'npm run serve' to start the Vue app.
 
 ### Logins: 
-##Login as admin:
+
+
+###Login as admin:
 
 username: admin
+
 password: abc123
 
-##Login as staff: 
+###Login as staff: 
+
 username: ericandre
+
 password: 123abc
+
 
 
 ### To-do list:
