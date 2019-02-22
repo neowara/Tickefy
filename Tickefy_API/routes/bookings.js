@@ -21,13 +21,15 @@ module.exports.post = async (req, res) => {
             }
 
             bookings.push(booking);
+            
+            let updateEvents = await Event.findOneAndUpdate(
+                { artist: event.artist},
+                { $inc: { tickets: -1 } },
+                { new: true, useFindAndModify: false }
+            );
         }
 
-        let updateEvents = await Event.findOneAndUpdate(
-            { artist: "Michael Jackson" },
-            { $inc: { tickets: -1 } },
-            { new: true, useFindAndModify: false }
-        );
+        
         
         let resp = await Booking.create(bookings);
         console.log(resp);

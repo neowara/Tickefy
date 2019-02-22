@@ -1,55 +1,55 @@
 <template>
-    <article class="ticket">
+    <article class="booking" v-bind:id="booking.code">
         <section class="what">
-            <p class="type">what</p>
-            <h1>{{ ticket.event.name }}</h1>
+            <p class="type">who</p>
+            <h1>{{ booking.event.artist }}</h1>
         </section>
         <section class="where">
             <p class="type">Where</p>
-            <h2>{{ ticket.event.where.venue }}</h2>
-            <p>{{ ticket.event.where.adress }}</p>
+            <h2>{{ booking.event.where.venue }}</h2>
+            <p>{{ booking.event.where.adress }}</p>
         </section>
         <section class="when">
             <p class="type">When</p>
-            <h2>{{ ticket.event.when.date }}</h2>
+            <h2>{{ booking.event.when.date }}</h2>
         </section>
         <section class="from">
             <p class="type">From</p>
-            <h2>{{ ticket.event.when.from }}</h2>
+            <h2>{{ booking.event.when.startTime }}</h2>
         </section>
         <section class="to">
             <p class="type">To</p>
-            <h2>{{ ticket.event.when.to }}</h2>
+            <h2>{{ booking.event.when.endTime }}</h2>
         </section>
         <section class="info">
             <p class="type">Info</p>
-            <p>{{ ticket.event.info }}</p>
+            <p>{{ booking.event.info }}</p>
         </section>
         <section class="code">
             <h1 class="barcode">
-                {{ ticket.code }}
+                {{ booking.code }}
             </h1>
-            <p class="utfcode">#{{ ticket.code }}</p>
+            <p class="utfcode">#{{ booking.code }}</p>
         </section>
     </article>
 </template>
 
 <script>
 export default {
-    name: 'ticket',
-    props: ['ticket']
+    name: 'booking',
+    props: ['booking']
 }
 </script>
 
 <style lang="scss">
 @import '../scss/variables';
 $baseline: 18px;
-.ticket {
-    position: absolute;
-    max-width: 19rem;
+.booking {
+    max-width: 18rem;
     background: white;
     box-shadow: 0 0 3rem rgba($color: #000000, $alpha: .15);
     width: 100%;
+    margin: 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 30px;
@@ -61,14 +61,6 @@ $baseline: 18px;
     "when from to"
     "info info info"
     "code code code";
-    &:nth-child(2) {
-        transform: scale(.95) translate3d(0,-1.5rem,0);
-        filter: brightness(.95);
-    }
-    &:nth-child(1) {
-        transform: scale(.9) translate3d(0,-3.2rem,0);
-        filter: brightness(.9);
-    }
     .type {
         padding: .75rem 0 0 1rem;
         margin: 0;

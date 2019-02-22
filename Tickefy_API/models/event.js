@@ -6,8 +6,8 @@ let eventSchema = new Schema({
     artist: String,
     when: {
         date: String,
-        from: String,
-        to: String
+        startTime: String,
+        endTime: String
     },
     where: {
         venue: String,

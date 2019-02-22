@@ -2,20 +2,22 @@
     <main id="pay">
         <section class="content" v-if="event">
         <p>You are about to score some sweet tickets to</p>
-        <h1>{{ event.name }}</h1>
-        <p class="when">{{ event.when.date }} {{ event.when.from }} - {{ event.when.to }}</p>
-        <p class="where">@ Globen</p>
+        <h1>{{ event.artist }}</h1>
+        <p class="when">{{ event.when.date }} {{ event.when.startTime }} - {{ event.when.endTime }}</p>
+        <p class="where">@ {{ event.where.venue }}</p>
         <section class="counter">
           <article class="price">{{ event.price * amount }} sek</article>
-          <article class="decrese" @click=" amount-- ">
+          <button class="decrese" @click="amount--" :disabled="amount==0">
             <img src="../assets/decrese.svg" alt="decrese">
-          </article>
+          </button>
           <article class="num-tickets">{{ amount }}</article>
-          <article class="increse" @click=" amount++ ">
+          <button class="increse" @click="amount++ " :disabled="amount==6">
             <img src="../assets/increse.svg" alt="increse">
-          </article>
+          </button>
         </section>
-        <a href="#" class="btn" @click="buy">Take my money!</a>
+        <p v-visible="amount==6">Max 6 tickets per person!</p>
+        <a href="#" class="btn"  @click="buy">Take my money!</a>
+        <a href="#" class="btn"  @click="$router.push('/events')">I regret my decision</a>
         </section>
         <section class="content" v-if="!event">
           <p>No ticket selected.</p>
@@ -32,7 +34,7 @@ export default {
   data(){
     return {
       activeStep: 2,
-      amount: 1
+      amount: 1,
     }
   },
   components: {
@@ -45,9 +47,10 @@ export default {
   },
   methods: {
     buy(){
+      if (this.amount > 0) {
       this.$store.dispatch('buy', { event: this.event._id, amount: this.amount });
-      this.$router.push('/tickets');
-    
+      this.$router.push('/bookings');
+      }
     }
   }
 }
@@ -55,6 +58,7 @@ export default {
 <style lang="scss">
 @import '../scss/variables';
 #pay {
+  @extend %mobileFirst;
   background: $darkblue;
   display: flex;
   flex-direction: column;
@@ -73,6 +77,7 @@ export default {
         font-weight: 700;
         background: $green;
         height: 4rem;
+        margin-top: 1.5rem;
         @extend %center;
       }
     }
@@ -82,6 +87,8 @@ export default {
       font-style: italic;
       padding: 2rem 3rem;
       text-align: center;
+      padding: 1rem;
+      margin: 0;
     }
     h1 {
       color: $pink;
@@ -124,9 +131,17 @@ export default {
       }
       .increse {
         @extend %center;
+        background: none;
+        border-style: solid;
+        border-width: 0px 0px 0px 1.5px;
+        border-color:  $pink;
       }
       .decrese {
         @extend %center;
+        background: none;
+        border-style: solid;
+        border-width: 0px 1.5px 0px 0px;
+        border-color:  $pink;
       }
       .num-tickets {
         @extend %center;

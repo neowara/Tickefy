@@ -10,3 +10,9 @@ $darkblue: #231F42;
     align-items: center;
     justify-content: center;
 }
+
+%mobileFirst {
+    @media screen and (max-width: 599px){
+          min-height: 100vh;
+      }
+}

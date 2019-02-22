@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import VueVisible from 'vue-visible'
 
+Vue.use(VueVisible)
 Vue.use(Router)
 
 export default new Router({
@@ -21,9 +23,9 @@ export default new Router({
       component: () => import('./views/Pay.vue')
     },
     {
-      path: '/tickets',
-      name: 'tickets',
-      component: () => import('./views/Tickets.vue')
+      path: '/bookings',
+      name: 'bookings',
+      component: () => import('./views/Bookings.vue')
     },
     {
       path: '/verify',
@@ -34,6 +36,11 @@ export default new Router({
       path: '/admin',
       name: 'admin',
       component: () => import('./views/Admin.vue')
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('./views/Login.vue')
     }
   ]
 })

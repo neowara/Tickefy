@@ -1,8 +1,9 @@
 <template>
     <main id="admin">
-        <img src="../assets/logo.svg" alt="logo" class="logo">
+        <img src="../assets/logo.svg" @click="$router.push('/')" alt="logo" class="logo">
         <section class="container">
             <section class="events">
+            <h1>Available Events</h1>
             <table cellspacing="0">
                 <thead>
                     <tr>
@@ -24,6 +25,8 @@
                 </tbody>
             </table>
             </section>
+            <section class="events">         
+            <h1>Create an event</h1>   
             <div class="form">
                 <input type="text" class="name" v-model="newEvent.artist" placeholder="artist" />
                 <input type="text" class="venue" v-model="newEvent.venue" placeholder="venue" />
@@ -36,6 +39,7 @@
                 <input type="number" class="tickets" v-model="newEvent.tickets" placeholder="num of tickets">
                 <a href="#" class="btn" @click="createEvent"> Create event!</a>
             </div>
+            </section>
         </section>
     </main>
 </template>
@@ -56,8 +60,8 @@ export default {
                 },
                 when: {
                     date: '',
-                    from: '',
-                    to: ''
+                    startTime: '',
+                    endTime: ''
                 },
                 info: '',
                 price: '',
@@ -70,8 +74,6 @@ export default {
     },
     methods: {
          createEvent(){
-            //  createEvents
-            // hämta events igen
 
             this.axios.post('http://localhost:3000/events', {
             artist: this.newEvent.artist,
@@ -106,6 +108,7 @@ export default {
 
 <style lang="scss">
 @import '../scss/variables';
+@import '../scss/main.scss';
 $baseline: 2.6rem;
 #admin {
     @extend %center;
@@ -119,9 +122,6 @@ $baseline: 2.6rem;
         max-width: 1000px;
         width: 100%;
         color: white;
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-gap: 1rem;
         .events {
             background: rgba($color: #000, $alpha: .4);
             border-radius: 3px;
@@ -159,7 +159,6 @@ $baseline: 2.6rem;
             }
         }
         .form {
-            background: rgba($color: #000, $alpha: .4);
             border-radius: 3px;
             padding: 1rem;
             display: grid;
@@ -215,5 +214,45 @@ $baseline: 2.6rem;
             }
         }
     }
+
+    @media screen and (min-width: 600px){
+        .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 1rem;
+        }
+    }
+
+    @media screen and (max-width: 599px){
+
+        .form {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+        position: static;
+        width: 4rem;
+        margin-top: 2rem;
+        }
+
+        #admin {
+            flex-wrap: wrap;
+        }
+
+        .events {
+            overflow: scroll;
+            margin-bottom: 2.25rem;
+            margin-top: 2.25rem;
+        }
+    }
 }
+
+@media screen and (max-width: 599px){
+
+        #admin {
+            flex-wrap: wrap;
+        }
+   
+    }
 </style>
