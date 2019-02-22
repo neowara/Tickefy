@@ -13,13 +13,13 @@ Once the API is running then use another terminal to navigate to Tickefy_Vue.js 
 ### Logins: 
 
 
-###Login as admin:
+### Login as admin:
 
 username: admin
 
 password: abc123
 
-###Login as staff: 
+### Login as staff: 
 
 username: ericandre
 
