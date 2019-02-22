@@ -74,8 +74,6 @@ export default {
     },
     methods: {
          createEvent(){
-            //  createEvents
-            // hämta events igen
 
             this.axios.post('http://localhost:3000/events', {
             artist: this.newEvent.artist,

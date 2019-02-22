@@ -7,13 +7,13 @@
         <p class="where">@ Globen</p>
         <section class="counter">
           <article class="price">{{ event.price * amount }} sek</article>
-          <article class="decrese" @click=" amount-- ">
+          <button class="decrese" @click="amount--" :disabled="amount==0">
             <img src="../assets/decrese.svg" alt="decrese">
-          </article>
+          </button>
           <article class="num-tickets">{{ amount }}</article>
-          <article class="increse" @click=" amount++ ">
+          <button class="increse" @click="amount++ ">
             <img src="../assets/increse.svg" alt="increse">
-          </article>
+          </button>
         </section>
         <a href="#" class="btn" @click="buy">Take my money!</a>
         </section>
@@ -32,7 +32,7 @@ export default {
   data(){
     return {
       activeStep: 2,
-      amount: 1
+      amount: 1,
     }
   },
   components: {
@@ -125,9 +125,17 @@ export default {
       }
       .increse {
         @extend %center;
+        background: none;
+        border-style: solid;
+        border-width: 0px 0px 0px 1.5px;
+        border-color:  $pink;
       }
       .decrese {
         @extend %center;
+        background: none;
+        border-style: solid;
+        border-width: 0px 1.5px 0px 0px;
+        border-color:  $pink;
       }
       .num-tickets {
         @extend %center;
