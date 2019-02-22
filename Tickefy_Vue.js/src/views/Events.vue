@@ -1,8 +1,9 @@
 <template>
     <main id="events">
         <header>
+            <img class="home" src="../assets/logo.svg" alt="Where its @" @click="$router.push('/')">
             <h1>Events</h1>
-            <input type="text" name="search" v-model="filter" placeholder="filter">
+            <input type="text" name="search" v-model="filter" placeholder="">
         </header>
         <section class="content">
         <event v-for="event in events" :key="event._id" :event="event" />
@@ -39,7 +40,7 @@ export default {
   background: $darkblue;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 0rem 2rem;
   box-sizing: border-box;
     header {
         @extend %center;
@@ -65,9 +66,18 @@ export default {
             font-size: 2.2rem;
             margin: .5rem 0;
         }
+        img {
+            margin: 10px auto;
+        } 
+
     }
   .content {
     flex: 7;
+  }
+
+  .home {
+    display: flex;
+    justify-content: flex-start;
   }
 }
 

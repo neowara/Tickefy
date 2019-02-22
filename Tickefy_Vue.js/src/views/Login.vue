@@ -4,7 +4,7 @@
         <img src="../assets/logo.svg"  alt="Where its @" @click="$router.push('/events')">
         </section>
         <div class="login">
-
+            
             <label for="usrname">Username</label>
             <input type="text" placeholder="Enter username" v-model="user" name="usrname" required>
 
@@ -13,7 +13,7 @@
 
             <p v-if="wrong">Wrong password or username!</p>
 
-            <button @click="checkLogin">Login</button>
+            <a  href="#" class="btn" @click="checkLogin">Login</a>
         </div>
 
     </section>
@@ -70,19 +70,38 @@ export default {
         label {
             color: white;
             text-align: center;
-            margin: 1rem;
-        }
-
-        
+            margin: 2rem  0 .5rem;
+        }        
     }
 
     .goHome {
-            width: 10vw;
-            margin: 0px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
 
-            
-            
         }
+
+        .btn {
+        max-width: 80vw;
+        width: 100%;
+        border-radius: 3px;
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 700;
+        background: $green;
+        height: 4rem;
+        margin-top: 1.5rem;
+        @extend %center;
+      }
+     input[type=text],
+     input[type=password]
+      {
+        padding: 12px 20px;
+        margin: 5px 0;
+    }
 
 
 }

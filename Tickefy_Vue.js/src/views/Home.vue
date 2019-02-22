@@ -4,8 +4,9 @@
       <img src="../assets/login.svg" alt="Login page" @click="$router.push('/login')">
     </section>
     <section class="content">
-      <img src="../assets/logo.svg" alt="Where its @" @click="$router.push('/events')">
+      <img src="../assets/logo.svg" alt="Where its @" >
       <h1>Where it´s @</h1>
+      <a href="#" class="btn" @click="$router.push('/events')" >Let's go!</a>
   </section>
   <pager :activeStep="activeStep"/>
   </main>
@@ -46,6 +47,27 @@ export default {
     }
   }
     @extend %mobileFirst;
+
+    .btn {
+        max-width: 20vw;
+        width: 100%;
+        border-radius: 3px;
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 700;
+        background: $green;
+        height: 4rem;
+        margin-top: 1.5rem;
+        @extend %center;
+      }
+
+        @media screen and (max-width: 600px){
+          .btn {
+            max-width: 60vw;
+        }
+
+    }
 }
   .login {
     display: flex;
@@ -58,6 +80,15 @@ export default {
 
     }
   }
+  @media screen and (max-width: 600px){
 
+        .login {
+
+            img{
+              max-width: 2.5rem;
+              margin: 0.7rem;
+            }
+        }
+  }
 
 </style>

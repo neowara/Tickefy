@@ -1,7 +1,7 @@
 <template>
-    <article class="booking">
+    <article class="booking" v-bind:id="booking.code">
         <section class="what">
-            <p class="type">what</p>
+            <p class="type">who</p>
             <h1>{{ booking.event.artist }}</h1>
         </section>
         <section class="where">
@@ -45,11 +45,11 @@ export default {
 @import '../scss/variables';
 $baseline: 18px;
 .booking {
-    position: absolute;
-    max-width: 19rem;
+    max-width: 18rem;
     background: white;
     box-shadow: 0 0 3rem rgba($color: #000000, $alpha: .15);
     width: 100%;
+    margin: 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 30px;
@@ -61,14 +61,6 @@ $baseline: 18px;
     "when from to"
     "info info info"
     "code code code";
-    &:nth-child(2) {
-        transform: scale(.95) translate3d(0,-1.5rem,0);
-        filter: brightness(.95);
-    }
-    &:nth-child(1) {
-        transform: scale(.9) translate3d(0,-3.2rem,0);
-        filter: brightness(.9);
-    }
     .type {
         padding: .75rem 0 0 1rem;
         margin: 0;

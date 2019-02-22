@@ -1,7 +1,11 @@
 <template>
   <main id="verify">
       <header>
-          <h1>Verify code</h1>
+        <img src="../assets/logoDark.svg" @click="$router.push('/')" alt="logo" class="logo">
+        <div class="staff-img"><img src="../assets/staff.svg" class="staff"></div>
+        <h3>Staff</h3>
+        <h1>Welcome Eric Andre!</h1>
+        <img class="user" src="../assets/Eric_Andre.jpg">
       </header>
     <section class="content">
         <section class="verification" v-if="verification">
@@ -49,6 +53,11 @@ export default {
       flex: 3;
       @extend %center;
       color: $darkblue;
+      flex-wrap:wrap;
+      text-align:center;
+  }
+  header * {
+      width:100%;
   }
   .content {
     flex: 10;
@@ -97,6 +106,25 @@ export default {
                 text-decoration: none;
         }
     }
+  }
+  .user {
+      width:10rem;
+      height:10rem;
+      background:white;
+      border-radius:999rem;
+      margin:1rem;
+  }
+  .logo {
+      width:8rem;
+      height:8rem;
+      margin-top: 2rem;
+  }
+  .staff {
+        width:8rem;
+      height:2rem;
+  }
+  .staff-img{
+      width:100%;
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <main id="admin">
-        <img src="../assets/logo.svg" alt="logo" class="logo">
+        <img src="../assets/logo.svg" @click="$router.push('/')" alt="logo" class="logo">
         <section class="container">
             <section class="events">
             <h1>Available Events</h1>
@@ -221,11 +221,8 @@ $baseline: 2.6rem;
         grid-template-columns: 2fr 1fr;
         grid-gap: 1rem;
         }
-
-   
     }
 
-    
     @media screen and (max-width: 599px){
 
         .form {
@@ -248,14 +245,10 @@ $baseline: 2.6rem;
             margin-bottom: 2.25rem;
             margin-top: 2.25rem;
         }
-   
     }
-
-
 }
 
 @media screen and (max-width: 599px){
-
 
         #admin {
             flex-wrap: wrap;

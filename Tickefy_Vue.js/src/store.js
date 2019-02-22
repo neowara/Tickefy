@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios';
+import VueVisible from 'vue-visible';
 
+Vue.use(VueVisible)
 Vue.use(Vuex)
 
 export default new Vuex.Store({
