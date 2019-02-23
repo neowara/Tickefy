@@ -1,16 +1,16 @@
 # Tickefy
 A little app built with Node.js, Vue.js and mongoDB that simulates buying a ticket online
 
-### Mockup:
+# Mockup:
 https://goo.gl/BSskwz
 
-### Installation: 
+# Installation: 
 
 Download the project and navigate to it with your terminal (on Mac) or cmd (on Windows)(Sorry Linux users). Navigate to Tickefy_API folder and use 'npm install' to install all modules.
 User the following to connecto the database: (on Mac: 'PASSWORD=thetitanic nodemon index.js') (on Windows: 'SET PASSWORD=thetitanic' press ENTER then write 'nodemon index.js').
 Once the API is running then use another terminal to navigate to Tickefy_Vue.js folder then use 'npm install' to install all needed modules. After that is done use 'npm run serve' to start the Vue app.
 
-### Logins: 
+# Logins: 
 
 
 ### Login as admin:
@@ -27,7 +27,7 @@ password: 123abc
 
 
 
-### To-do list:
+# To-do list:
 
 ## MongoDB
 
@@ -73,7 +73,7 @@ password: 123abc
 
 
 
-### If we have time: 
+# If I have time: 
 - [ ] Encrypt the ticket ID / validation code
 - [ ] Create group discounts
 - [ ] Be able to scan the QR codes for real
