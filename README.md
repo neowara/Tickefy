@@ -59,7 +59,7 @@ password: 123abc
     - [X] In that page the user can select the amount of tickets
     - [X] The price should go up and down dynamically depending on the amount of tickets chosen.
     - [X] Buy button at the end of page that will redirect you to the Tickets page
-- [ X Create a Tickets page
+- [X] Create a Tickets page
     - [X] Show all tickets purchased in this page, indivually as cards
     - [X] Every card should contain the information shown in the sketch
     - [X] Every card will have a unique code at the bottom and optionally a QR code
